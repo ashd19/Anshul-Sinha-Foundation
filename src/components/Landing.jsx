@@ -30,7 +30,7 @@ export default function Landing() {
               <h1 className="text-sm md:text-base inter-md">Donate now</h1>{" "}
               <MoveRight className="w-5 h-5" />
             </div>
-            <div className="flex w-fit px-4 py-3 md:px-5 md:py-3 rounded-3xl text-white bg-[#111111]  duration-50 hover:text-black hover:bg-white gap-2 items-center cursor-pointer  transition-colors">
+            <div className="flex w-fit px-5 py-5 md:px-5 md:py-3 rounded-3xl text-white bg-[#111111]  duration-50 hover:text-black hover:bg-white gap-2 items-center cursor-pointer  transition-colors">
               <h1 className="text-sm md:text-base inter-md">About Us</h1>{" "}
               <MoveRight className="w-5 h-5" />
             </div>

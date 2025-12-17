@@ -1,7 +1,7 @@
 import { MoveRight } from "lucide-react";
 function AboutUs() {
   return (
-    <div className="bg-[#EBEBE3] h-screen p-10">
+    <div className="bg-[#EBEBE3] h-full p-10">
       <div className="flex gap-10 ">
         <div className="flex flex-col gap-5">
           <h1 className="inter-small text-[7rem]">About us</h1>
