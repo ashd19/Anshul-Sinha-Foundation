@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Footer from "./components/Footer.jsx";
 import Landing from "./components/Landing.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -9,15 +10,23 @@ import Blogs from "./components/Blogs.jsx"
 
 function App() {
   // Initialize Lenis
-  const lenis = new Lenis({
-    autoRaf: true,
-  });
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
 
-  requestAnimationFrame(raf);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    const frameId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <div>
@@ -26,7 +35,7 @@ function App() {
       <Blogs />
       <AboutUs />
       <Projects />
-      <Social />
+      {/* <Social /> */}
       <Footer />
     </div>
   );
