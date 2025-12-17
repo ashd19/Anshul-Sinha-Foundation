@@ -5,6 +5,7 @@ import AboutUs from "./components/AboutUs.jsx";
 import Lenis from "lenis";
 import Social from "./components/Social.jsx";
 import Projects from "./components/Projects.jsx"
+import Blogs from "./components/Blogs.jsx"
 
 function App() {
   // Initialize Lenis
@@ -22,6 +23,7 @@ function App() {
     <div>
       <Navbar />
       <Landing />
+      <Blogs />
       <AboutUs />
       <Projects />
       <Social />

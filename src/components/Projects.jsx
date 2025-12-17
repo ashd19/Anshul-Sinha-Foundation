@@ -20,17 +20,17 @@ export default function Projects() {
     return (
         <section className="min-h-screen w-full bg-[#EBEBE3] px-4 sm:px-10 md:px-20 py-10 flex flex-col justify-center">
             <div className="w-full flex flex-col">
-                <div className="flex items-center justify-center gap-20">
+                <div className="flex items-center justify-center gap-20 mb-10">
                     <h1 className="inter-md text-[7rem]">Projects</h1>
                     <p className="inter-small text-[1.2rem] mt-1">Explore our ongoing projects dedicated to improving the lives of those in need. Each project is carefully designed to address specific challenges and bring about positive change</p>
                 </div>
 
                 {projects.map((item, index) => (
-                    <div
+                    <a
+                        href="#"
                         key={index}
-                        className="flex flex-col md:flex-row justify-between w-full border-t border-black/40 py-10 md:py-24 gap-10"
+                        className="flex flex-col  hover:scale-110 hover:bg-[rgb (215,215,183)] md:flex-row justify-between px-30 hover: transition-all ease-in duration-200  w-full border-t border-black/40 py-10 md:py- gap-"
                     >
-                        {/* Left Side */}
                         <div className="w-full md:w-1/3">
                             <h2 className="inter-small text-xl md:text-2xl text-[#111] font-light tracking-wide">
                                 {item.category}
@@ -46,10 +46,10 @@ export default function Projects() {
                                 {item.description}
                             </p>
                         </div>
-                    </div>
+                    </a>
                 ))}
 
             </div>
-        </section>
+        </section >
     );
 }
