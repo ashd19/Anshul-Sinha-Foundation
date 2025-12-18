@@ -7,6 +7,7 @@ import Lenis from "lenis";
 import Social from "./components/Social.jsx";
 import Projects from "./components/Projects.jsx"
 import Blogs from "./components/Blogs.jsx"
+import Faq from "./components/Faq.jsx";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
       <Blogs />
       <AboutUs />
       <Projects />
+      <Faq/>
       <Social />
       <Footer />
     </div>
