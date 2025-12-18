@@ -4,7 +4,7 @@ import Landing from "./components/Landing.jsx";
 import Navbar from "./components/Navbar.jsx";
 import AboutUs from "./components/AboutUs.jsx";
 import Lenis from "lenis";
-import Social from "./components/Social.jsx";
+// import Social from "./components/Social.jsx";
 import Projects from "./components/Projects.jsx"
 import Blogs from "./components/Blogs.jsx"
 import Faq from "./components/Faq.jsx";
