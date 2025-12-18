@@ -38,7 +38,7 @@ export default function Blogs() {
     return (
         <section className="min-h-screen w-full bg-[#EBEBE3] py-20 overflow-hidden flex flex-col justify-center">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-10 md:px-20 mb-12">
-                <h1 className="inter-small text-4xl sm:text-5xl md:text-6xl text-[#111] font-light mb-8">
+                <h1 className="inter-small text-5xl sm:text-7xl lg:text-[7rem] leading-none text-[#111] mb-8">
                     Blog
                 </h1>
                 <div className="w-full border-t border-black/80"></div>

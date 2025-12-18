@@ -21,8 +21,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
           <div className="max-w-md">
-            <h2 className="text-[#] text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight inter-bold">
-              Careon
+            <h2 className="text-[#111] text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight inter-bold leading-none">
+              Anshul Sinha <br className="sm:hidden" /> Foundation
             </h2>
             <p className="text-neutral-600 text-base sm:text-lg tracking-wide leading-relaxed inter-small">
               Be the first to hear how you're making a difference.
