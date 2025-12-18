@@ -1,98 +1,108 @@
-import { Eye, Heart } from "lucide-react";
-import { motion } from "motion/react";
+import React from 'react';
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const blogPosts = [
     {
-        image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070&auto=format&fit=crop",
-        title: "Empower Women and Children",
-        description: "In the realm of social initiatives, Anshul Sinha Foundation stands out as a beacon of hope and empowerment for women and children.",
-        views: 13,
-        likes: 1
+        category: "Community",
+        date: "Dec 12, 2024",
+        readTime: "5 min read",
+        image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=800",
+        title: "The Ripple Effect: How Education Changes Generations",
+        description: "Exploring the long-term impact of scholarship programs on rural communities and local economies.",
     },
     {
-        image: "https://images.unsplash.com/photo-1464982326199-86f32f81b211?q=80&w=1974&auto=format&fit=crop",
-        title: "Supporting Differently-Abled",
-        description: "When it comes to supporting differently-abled individuals, the Anshul Sinha Foundation is leading the way with its diverse range of programs.",
-        views: 6,
-        likes: 0
+        category: "Healthcare",
+        date: "Nov 28, 2024",
+        readTime: "8 min read",
+        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800",
+        title: "Bridging the Gap in Rural Medical Access",
+        description: "A deep dive into our mobile clinic initiatives and the volunteers making healthcare a reality for all.",
     },
     {
-        image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2074&auto=format&fit=crop",
-        title: "Volunteer Opportunities",
-        description: "Are you looking to make a positive impact in your community and contribute to meaningful causes? Join our volunteer program today.",
-        views: 7,
-        likes: 0
-    },
-    {
-        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
-        title: "Community Development",
-        description: "Building stronger communities through dedicated support systems and sustainable development initiatives for a better tomorrow.",
-        views: 12,
-        likes: 3
+        category: "Empowerment",
+        date: "Nov 15, 2024",
+        readTime: "4 min read",
+        image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=800",
+        title: "Voices of Strength: Stories from Our Women's Center",
+        description: "Highlighting the personal journeys of three women who transformed their lives through vocational training.",
     }
 ];
 
-const duplicatedPosts = [...blogPosts, ...blogPosts];
-
 export default function Blogs() {
     return (
-        <section 
-        id="Blog"
-        className="min-h-screen w-full  py-20 overflow-hidden flex flex-col justify-center">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-10 md:px-20 mb-12">
-                <h1 className="inter-small text-5xl sm:text-7xl lg:text-[7rem] leading-none text-[#111] mb-8">
-                    Blog
-                </h1>
-                <div className="w-full border-t border-black/80"></div>
-            </div>
+        <section id="Blog" className="bg-[#050505] text-white py-24 px-6 md:px-12 lg:px-20">
+            <div className="max-w-[1400px] mx-auto">
+                
+                {/* Section Header */}
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                    <div className="max-w-2xl">
+                        <span className="text-[#22c55e] font-bold tracking-[0.3em] uppercase text-sm mb-4 block">
+                            Our Journal
+                        </span>
+                        <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight leading-[1.1]">
+                            Latest Insights & Stories
+                        </h2>
+                    </div>
+                    <motion.a 
+                        whileHover={{ x: 5 }}
+                        href="#" 
+                        className="flex items-center text-white/60 hover:text-[#22c55e] font-bold text-lg transition-colors pb-2 border-b border-white/10"
+                    >
+                        View All Posts <ArrowUpRight className="ml-2 w-5 h-5" />
+                    </motion.a>
+                </div>
 
-            <div className="w-full overflow-hidden">
-                <motion.div
-                    className="flex gap-8 w-max"
-                    animate={{
-                        x: "-50%"
-                    }}
-                    transition={{
-                        repeat: Infinity,
-                        ease: "linear",
-                        duration: 30
-                    }}
-                >
-                    {duplicatedPosts.map((post, index) => (
-                        <div
+                {/* Blog Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {blogPosts.map((post, index) => (
+                        <motion.article
                             key={index}
-                            className="w-[300px] sm:w-[350px] md:w-[400px] flex-shrink-0 flex flex-col gap-4 group cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="group cursor-pointer"
                         >
-                            <div className="overflow-hidden w-full h-64 sm:h-72 bg-gray-200">
+                            {/* Featured Image */}
+                            <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] mb-6">
+                                <div className="absolute top-4 left-4 z-10">
+                                    <span className="bg-black/40 backdrop-blur-md border border-white/10 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                                        {post.category}
+                                    </span>
+                                </div>
                                 <img
                                     src={post.image}
                                     alt={post.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
 
-                            <div className="flex flex-col gap-2 mt-2 px-1">
-                                <h3 className="inter-small text-lg md:text-xl font-normal text-[#111] leading-tight">
-                                    {post.title}
-                                </h3>
-                                <p className="inter-small text-sm text-[#333] leading-relaxed opacity-80 line-clamp-3">
-                                    {post.description}
-                                </p>
+                            {/* Post Meta */}
+                            <div className="flex items-center gap-4 text-gray-500 text-sm mb-4">
+                                <span>{post.date}</span>
+                                <span className="w-1 h-1 bg-gray-700 rounded-full"></span>
+                                <span>{post.readTime}</span>
                             </div>
 
-                            <div className="w-full border-t border-black/10 mt-auto pt-3 flex justify-between items-center text-xs text-[#333] px-1">
-                                <div className="flex items-center gap-1.5 opacity-70">
-                                    <Eye className="w-4 h-4" />
-                                    <span>{post.views}</span>
-                                </div>
-                                <div className="flex items-center gap-1.5 text-red-500">
-                                    <span>{post.likes > 0 ? post.likes : ''}</span>
-                                    <Heart className={`w-4 h-4 ${post.likes > 0 ? 'fill-current' : ''}`} />
-                                </div>
+                            {/* Content */}
+                            <h3 className="text-2xl font-bold leading-tight mb-4 group-hover:text-[#22c55e] transition-colors">
+                                {post.title}
+                            </h3>
+                            
+                            <p className="text-gray-400 leading-relaxed mb-6 line-clamp-2">
+                                {post.description}
+                            </p>
+
+                            {/* Read More Link */}
+                            <div className="flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all uppercase text-xs tracking-[0.2em]">
+                                Read Article <ArrowRight className="w-4 h-4 text-[#22c55e]" />
                             </div>
-                        </div>
+                        </motion.article>
                     ))}
-                </motion.div>
+                </div>
+
+               
             </div>
         </section>
     );

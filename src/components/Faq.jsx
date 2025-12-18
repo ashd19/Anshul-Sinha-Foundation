@@ -1,98 +1,108 @@
+import React, { useState } from 'react';
 import { CircleStop, Plus } from "lucide-react";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Faqcomp = ({ text, isOpen, onClick }) => {
+const faqs = [
+  {
+    id: 1,
+    question: "What is your NGO's mission?",
+    answer: "We empower underserved communities through education, healthcare, food, clean water, and disaster relief. Our core focus is breaking the cycle of poverty through sustainable initiatives.",
+  },
+  {
+    id: 2,
+    question: "How are donations used?",
+    answer: "Donations fund essentials like food, shelter, education, and healthcare. We maintain full transparency with annual reports available for all our donors to review.",
+  },
+  {
+    id: 3,
+    question: "Can I Volunteer?",
+    answer: "Absolutely! We welcome volunteers for teaching, event management, outreach, and administrative support. Join our community of change-makers today.",
+  },
+  {
+    id: 4,
+    question: "Besides donating, how else can I help?",
+    answer: "You can volunteer your skills, share our mission on social media, host small community fundraising events, or even advocate for our causes in your workplace.",
+  },
+  {
+    id: 5,
+    question: "Can I sponsor a child or family?",
+    answer: "Yes, our sponsorship program allows you to provide direct support for a child’s education or a family's basic needs, establishing a long-term path to stability.",
+  },
+];
+
+const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div
-      className="rounded-xl cursor-pointer w-full min-h-[70px] sm:h-[80px] p-3 sm:p-4 flex justify-between items-center bg-black/4 group transition ease-in duration-300 "
-      onClick={onClick}
-    >
-      <h1 className="text-base sm:text-lg md:text-xl text-[#1d332c] font-medium pr-2 leading-snug inter-nav">{text}</h1>
-      <div className={`bg-[#fefff2] group-hover:bg-orange-400/50 rounded-full min-w-[40px] w-[40px] h-[40px] sm:min-w-[50px] sm:w-[50px] sm:h-[50px] flex items-center justify-center transition-all duration-300 ${isOpen ? 'rotate-45 bg-orange-400/50' : ''}`}>
-        <Plus className="w-5 h-5 sm:w-6 sm:h-6" />
-      </div>
+    <div className="border-b border-white/10">
+      <button
+        className="w-full py-8 flex justify-between items-center text-left group transition-all"
+        onClick={onClick}
+      >
+        <h3 className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${isOpen ? 'text-[#22c55e]' : 'text-white group-hover:text-gray-300'}`}>
+          {question}
+        </h3>
+        <div className={`flex-shrink-0 ml-4 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#22c55e] border-[#22c55e] rotate-45' : 'bg-transparent'}`}>
+          <Plus className={`w-6 h-6 transition-colors ${isOpen ? 'text-black' : 'text-white'}`} />
+        </div>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="text-gray-400 text-lg leading-relaxed pb-8 max-w-3xl">
+              {answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
-const Faq = () => {
-  const [openId, setOpenId] = useState(null);
-
-  const faqs = [
-    {
-      id: 1,
-      question: "What is your NGO's mission?",
-      answer: "We empower underserved communities through education, healthcare, food, clean water, and disaster relief.",
-    },
-    {
-      id: 2,
-      question: "How are donations used?",
-      answer: "Donations fund essentials like food, shelter, education, and healthcare, with full transparency.",
-    },
-    {
-      id: 3,
-      question: "Can I Volunteer?",
-      answer: "Yes! We welcome volunteers for teaching, events, outreach, and support programs.",
-    },
-    {
-      id: 4,
-      question: "Besides donating, how else can I help?",
-      answer: "You can volunteer, share our mission on social media, host small fundraising events, or encourage others to get involved.",
-    },
-    {
-      id: 5,
-      question: "Can I sponsor a child or family?",
-      answer: "Yes, you can sponsor a child’s education, meals, or healthcare. Some donors also choose to support entire families, giving them stability and hope.",
-    },
-  ];
-
-  const toggleFaq = (id) => {
-    setOpenId(openId === id ? null : id);
-  };
+export default function Faq() {
+  const [openId, setOpenId] = useState(1); // Default first one open for better UI
 
   return (
-    <div className="h-full  p-4 sm:p-6 lg:p-8 mb-20 pb-1 ">
-      <div className="max-w-8xl mx-auto mb-15 ">
-        <div className="flex flex-col lg:flex-row px-14 gap-8 lg:gap-12 justify-between items-start">
-          {/* Left side - Header */}
-          <div className="flex flex-col justify-start w-full lg:w-[600px]">
-            <div className="flex items-center  mb-4">
-              <CircleStop height={15} width={15} className="text-[#1d332c]" />
-              <h2 className="text-[0.8rem]    inter-bold ml-2   tracking-wider text-[#1d332c]">
-                FREQUENTLY ASKED QUESTIONS
-              </h2>
+    <section id="FAQ" className="bg-black text-white py-24 px-6 md:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+          
+          {/* Left Column: Static Content */}
+          <div className="lg:w-1/3 flex flex-col">
+            <div className="flex items-center mb-6">
+              <CircleStop className="w-4 h-4 text-[#22c55e] animate-pulse" />
+              <span className="ml-3 text-xs font-bold tracking-[0.3em] uppercase text-gray-400">
+                Common Queries
+              </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold md:leading-12  leading-none text-[#1d332c] tracking-tighter md:whitespace-nowrap">
-              Your questions,our answers
-            </h1>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8">
+              Your questions, <br />
+              <span className="text-gray-500">our answers</span>
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Can't find what you're looking for? Reach out to our support team for more detailed information about our operations.
+            </p>
           </div>
 
-          {/* Right side - FAQ Items */}
-          <div className="flex flex-col gap-3 sm:gap-4 w-full lg:w-[600px]">
+          {/* Right Column: Accordion */}
+          <div className="lg:w-2/3 border-t border-white/10">
             {faqs.map((faq) => (
-              <div key={faq.id} className="w-full ">
-                <Faqcomp
-                  text={faq.question}
-                  isOpen={openId === faq.id}
-                  onClick={() => toggleFaq(faq.id)}
-                />
-
-                {/* Answer with smooth animation */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openId === faq.id ? 'max-h-96 mt-2' : 'max-h-0'
-                    }`}
-                >
-                  <div className=" inter-small p-4 sm:p-6 text-[#1d332c] text-sm sm:text-base leading-relaxed inter-faq ">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
+              <FaqItem
+                key={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openId === faq.id}
+                onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
+              />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Faq;
+}

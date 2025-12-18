@@ -8,6 +8,7 @@ import Social from "./components/Social.jsx";
 import Projects from "./components/Projects.jsx"
 import Blogs from "./components/Blogs.jsx"
 import Faq from "./components/Faq.jsx";
+import Causes from "./components/Causes.jsx";
 
 function App() {
 
@@ -33,11 +34,12 @@ function App() {
     <div>
       <Navbar />
       <Landing />
-      <Blogs />
       <AboutUs />
+      <Causes/>
+      <Blogs />
       <Projects />
       <Faq/>
-      <Social />
+      {/* <Social /> */}
       <Footer />
     </div>
   );
