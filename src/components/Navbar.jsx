@@ -8,19 +8,19 @@ export default function Navbar() {
     <>
 
       <div className="flex items-center justify-center w-full px-4">
-        <nav className="w-fit max-w-5xl rounded-full backdrop-blur-xl mt-4 py-4 md:py-5 inter-md px-6 md:px-10 flex items-center justify-center gap-5 fixed top-0 z-[999] bg-white/40 border border-white/20 shadow-lg transition-all duration-300">
-          <a href="#" className="text-sm md:text-base font-bold whitespace-nowrap overflow-hidden text-ellipsis max-w-[150px] sm:max-w-none">
+        <nav className="w-fit max-w-5xl rounded-full  backdrop-blur-xl mt-4 py-4 md:py-5 inter-md px-6 md:px-10 flex items-center justify-center gap-5 fixed top-0 z-[999] bg-black/20 border border-white/20 shadow-lg transition-all duration-300">
+          <a href="#" className="text-sm md:text-base font-bold whitespace-nowrap overflow-hidden text-ellipsis max-w-[150px]  text-white sm:max-w-none ">
             Anshul Sinha Foundation
           </a>
           <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
             {["Home", "Blog", "Book Online"].map((item, index) => (
-              <a href={`${item}`} key={index} className="inter-small text-sm hover:text-[#22E56D] transition-colors">
+              <a href={`${item}`} key={index} className="inter text-white text-sm hover:text-[#22E56D] transition-colors">
                 {item}
               </a>
             ))}
             <a
               href="#"
-              className="rounded-3xl bg-[#22E56D] px-5 py-2 inter-bold text-white text-sm hover:bg-black hover:text-white transition-all duration-300 shadow-md"
+              className="rounded-3xl bg-[#22E56D] px-5 py-2 inter-bold text- text-sm hover:bg-black hover:text-white transition-all duration-300 shadow-md"
             >
               Donate Now
             </a>
@@ -28,7 +28,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="/login"
-              className="hidden md:block text-sm hover:scale-95 transition-transform duration-200"
+              className="text-white hidden md:block text-sm hover:scale-95 transition-transform duration-200"
             >
               Log in
             </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
           <div className="flex flex-col p-6 space-y-6">
             {["Home", "Blog", "Book Online"].map((item, index) => (
               <a
-                href={`${item}`}
+                href={`/${item}` && item === "Home" ? "/" : `#${item}`}
                 key={index}
                 className="inter-small text-lg hover:text-[#22E56D] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
@@ -64,7 +64,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#"
+              href="/donate"
               className="rounded-3xl bg-[#22E56D] w-full py-3 text-center inter-bold text-white hover:text-green-600 hover:bg-black transition-colors duration-400 ease-in"
               onClick={() => setIsMenuOpen(false)}
             >

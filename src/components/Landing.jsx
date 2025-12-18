@@ -13,11 +13,11 @@ export default function Landing() {
         }}
         className="h-screen overflow-hidden flex items-center justify-start px-6 md:px-12 lg:px-20"
       >
-        <div className="flex flex-col mt-20 md:mt-32 lg:ml-20 max-w-4xl w-full">
+        <div className="flex flex-col mt-20 md:mt-52 lg:ml-20 max-w-4xl leading-none w-full">
           <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide inter-md text-[#22E56D]">
             Together, We Create Impact
           </h1>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tighter inter-md mt-2 md:mt-4 leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tighter inter-md mt-2 ">
             Unite. Act. <br />
             Transform
           </h1>

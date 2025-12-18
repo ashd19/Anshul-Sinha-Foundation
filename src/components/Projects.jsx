@@ -18,7 +18,9 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section className="min-h-screen w-full bg-[#EBEBE3] px-6 sm:px-12 md:px-20 py-20 flex flex-col justify-center">
+        <section
+        id="Projects"
+        className="min-h-screen w-full  px-6 sm:px-12 md:px-20 py-20 flex flex-col justify-center">
             <div className="w-full max-w-7xl mx-auto flex flex-col">
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 mb-16 md:mb-24">
                     <h1 className="inter-md text-5xl sm:text-7xl lg:text-[7rem] leading-none text-[#111]">Projects</h1>

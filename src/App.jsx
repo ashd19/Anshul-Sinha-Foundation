@@ -9,7 +9,7 @@ import Projects from "./components/Projects.jsx"
 import Blogs from "./components/Blogs.jsx"
 
 function App() {
-  // Initialize Lenis
+
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
@@ -35,7 +35,7 @@ function App() {
       <Blogs />
       <AboutUs />
       <Projects />
-      {/* <Social /> */}
+      <Social />
       <Footer />
     </div>
   );

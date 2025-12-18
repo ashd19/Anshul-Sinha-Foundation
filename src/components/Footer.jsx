@@ -11,13 +11,13 @@ const FramerLogo = ({ className }) => (
 
 export default function Footer() {
   const links = {
-    navigation: ["Home", "About", "Causes", "Donate"],
-    other: ["Programs", "Blogs", "Privacy policy", "Terms and Conditions"],
+    navigation: ["Home", "About", "Blog", "Projects", "Donate"],
+    other: [ "Socials", "Privacy policy", "Terms and Conditions"],
     social: ["Linkedin", "Instagram", "X/twitter"],
   };
 
   return (
-    <footer className="bg-[#EBEBE3] text-black w-full min-h-screen font-sans overflow-hidden">
+    <footer className="text-black w-full min-h-screen font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
           <div className="max-w-md">
@@ -65,7 +65,7 @@ export default function Footer() {
               {links.navigation.map((item) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href={`#${item}` && item === "Home" ? "/" : `#${item}`}
                     className="group hover:underline inter-small flex items-center gap-2 text-black  transition-colors text-sm sm:text-base font-medium"
                   >
                     {item}
@@ -139,10 +139,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-black/10 pt-6 sm:pt-8 flex flex-col inter-small tracking-wider md:flex-row justify-between items-center text-xs sm:text-sm text-neutral-500 gap-3 sm:gap-4 text-center md:text-left">
           <p>All copyrights reserved for @Anshul</p>
-          <p className="flex items-center gap-1 flex-wrap justify-center">
-            Designed by NexaCrft{" "}
-            <span className="text-neutral-400">@nexcrft.com</span>
-          </p>
+          <a href="https://nexacrft.com" target="_blank" rel="noopener noreferrer">
+            <p className="flex items-center gap-1 flex-wrap justify-center">
+              Designed by NexaCrft{" "}
+              <span className="text-neutral-400">@nexcrft.com</span>
+            </p>
+          </a>
         </div>
       </div>
 

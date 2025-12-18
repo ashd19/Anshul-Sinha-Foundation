@@ -1,26 +1,26 @@
-import React from "react";
-import { motion } from "motion/react";
-function Social() {
+import { CircleStopIcon } from 'lucide-react';
+import BlogCard from './BlogCard';
+export default function Blogs() {
   return (
-    <div className="min-h-[50vh] py-20 px-6 sm:px-12 md:px-20 bg-[#EBEBE3]">
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
-        <h1 className="text-6xl sm:text-8xl md:text-[10rem] inter-md text-[#111] leading-none mb-12">
-          Socials
-        </h1>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full max-w-lg aspect-video bg-neutral-900 rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer"
-        >
-          <div className="p-8 text-white inter-small">
-            <h2 className="text-2xl mb-4 font-bold">Follow Our Journey</h2>
-            <p className="opacity-70">Stay updated with our latest missions and impact stories across all platforms.</p>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
+    <>
+      <div className="relative min-h-screen w-full  pt-1 pb-1">
 
-export default Social;
+        <h1 className="md:text-[13rem] text-[9rem]  interServices text-center  tracking-tight text-[#1e3730]   ">Blogs</h1>
+        <div className="flex gap-1 absolute top-0 left-1/2 -translate-x-13 md:translate-y-24 translate-y-16 items-center  justify-center">
+          <CircleStopIcon className="w-3 h-3 mb-[0.1rem]" />
+          <h1 className=" text-[#1e3730] text-[0.9rem] font-bold tracking-wide uppercase whitespace-nowrap">articles and insights</h1>
+
+        </div>
+
+        <div className='px-10 grid md:grid-cols-2  md:grid-rows-2  grid-cols-1 grid-rows-4 gap-10 mb-20'>
+          <BlogCard imgurl={"https://framerusercontent.com/images/vONJRcDiOdig242Q3TiVm6E4.jpg?scale-down-to=512"} tag={"TIPS"} date={"Jun 6, 2024"} timeToRead={"5"} heading={<>5 Creative Tips for Adding Personality to <br /> Your Space </>} />
+          <BlogCard imgurl={"https://framerusercontent.com/images/vONJRcDiOdig242Q3TiVm6E4.jpg?scale-down-to=512"} tag={"TIPS"} date={"Jun 6, 2024"} timeToRead={"5"} heading={<>5 Creative Tips for Adding Personality to <br /> Your Space </>} />
+          <BlogCard imgurl={"https://framerusercontent.com/images/vONJRcDiOdig242Q3TiVm6E4.jpg?scale-down-to=512"} tag={"TIPS"} date={"Jun 6, 2024"} timeToRead={"5"} heading={<>5 Creative Tips for Adding Personality to <br /> Your Space </>} />
+          <BlogCard imgurl={"https://framerusercontent.com/images/vONJRcDiOdig242Q3TiVm6E4.jpg?scale-down-to=512"} tag={"TIPS"} date={"Jun 6, 2024"} timeToRead={"5"} heading={<>5 Creative Tips for Adding Personality to <br /> Your Space </>} />
+
+        </div>
+
+      </div>
+    </>
+  )
+}
