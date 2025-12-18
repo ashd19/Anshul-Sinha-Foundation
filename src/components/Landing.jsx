@@ -6,10 +6,11 @@ export default function Landing() {
       <main
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://framerusercontent.com/images/5OGFm3xDmmisAnJExVwoI7qwrPo.jpg?scale-down-to=2048&width=5184&height=3456')",
+            "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://media.istockphoto.com/id/2206130846/photo/group-of-happy-kids-sigiriya-ceylon.jpg?s=612x612&w=0&k=20&c=Q51hjILKWdH_5kk6i7oODfRosuCjdUdFwVm2EJSPQl8=')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          scale:"",
         }}
         className="h-screen overflow-hidden flex items-center justify-start px-4 md:px-8 lg:px-12"
       >
