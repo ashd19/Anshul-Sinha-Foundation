@@ -51,9 +51,9 @@ const Faq = () => {
   };
 
   return (
-    <div className="h-full  p-4 sm:p-6 lg:p-8 mb-20 pb-1">
+    <div className="h-full  p-4 sm:p-6 lg:p-8 mb-20 pb-1 ">
       <div className="max-w-8xl mx-auto mb-15 ">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start">
+        <div className="flex flex-col lg:flex-row px-14 gap-8 lg:gap-12 justify-between items-start">
           {/* Left side - Header */}
           <div className="flex flex-col justify-start w-full lg:w-[600px]">
             <div className="flex items-center  mb-4">
@@ -82,7 +82,7 @@ const Faq = () => {
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openId === faq.id ? 'max-h-96 mt-2' : 'max-h-0'
                     }`}
                 >
-                  <div className=" p-4 sm:p-6 text-[#1d332c] text-sm sm:text-base leading-relaxed inter-faq ">
+                  <div className=" inter-small p-4 sm:p-6 text-[#1d332c] text-sm sm:text-base leading-relaxed inter-faq ">
                     {faq.answer}
                   </div>
                 </div>
