@@ -32,9 +32,9 @@ const faqs = [
 
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className="border-b border-white/10">
+    <div className="">
       <button
-        className="w-full py-8 flex justify-between items-center text-left group transition-all"
+        className="w-full py-8 flex justify-between items-center text-left group transition-all hover:cursor-pointer"
         onClick={onClick}
       >
         <h3 className={`text-xl md:text-2xl inter-md transition-colors duration-300 ${isOpen ? 'text-[#22c55e]' : 'text-white group-hover:text-gray-300'}`}>
@@ -65,38 +65,30 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
 };
 
 export default function Faq() {
-  const [openId, setOpenId] = useState(1); // Default first one open for better UI
+  const [openId, setOpenId] = useState(0);
 
   return (
     <section id="FAQ" className="bg-black text-white py-24 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
 
-          {/* Left Column: Static Content */}
           <div className="lg:w-1/3 flex flex-col">
-            <div className="flex items-center mb-6">
-              <CircleStop className="w-4 h-4 text-[#22c55e] animate-pulse" />
-              <span className="ml-3 text-xs inter-bold tracking-[0.3em] uppercase text-gray-400">
-                Common Queries
-              </span>
-            </div>
+            
             <h2 className="text-5xl md:text-6xl inter-bold tracking-tighter leading-tight mb-8">
               Your questions, <br />
               <span className="text-gray-500">our answers</span>
             </h2>
-            <p className="text-gray-400 inter-md leading-relaxed">
-              Can't find what you're looking for? Reach out to our support team for more detailed information about our operations.
-            </p>
+            
           </div>
 
-          {/* Right Column: Accordion */}
-          <div className="lg:w-2/3 border-t border-white/10">
+          <div className="lg:w-2/3 border-t border-white/10 ">
             {faqs.map((faq) => (
               <FaqItem
                 key={faq.id}
                 question={faq.question}
                 answer={faq.answer}
                 isOpen={openId === faq.id}
+                className={openId === faq.id ? "cursor-pointer" : ""}
                 onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
               />
             ))}
