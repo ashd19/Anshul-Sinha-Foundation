@@ -33,21 +33,21 @@ export default function Blogs() {
     return (
         <section id="Blog" className="bg-[#050505] text-white py-24 px-6 md:px-12 lg:px-20">
             <div className="max-w-[1400px] mx-auto">
-                
+
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl">
-                        <span className="text-[#22c55e] font-bold tracking-[0.3em] uppercase text-sm mb-4 block">
+                        <span className="text-[#22c55e] inter-bold tracking-[0.3em] uppercase text-sm mb-4 block">
                             Our Journal
                         </span>
-                        <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight leading-[1.1]">
+                        <h2 className="text-[clamp(2.5rem,5vw,4rem)] inter-bold tracking-tight leading-[1.1]">
                             Latest Insights & Stories
                         </h2>
                     </div>
-                    <motion.a 
+                    <motion.a
                         whileHover={{ x: 5 }}
-                        href="#" 
-                        className="flex items-center text-white/60 hover:text-[#22c55e] font-bold text-lg transition-colors pb-2 border-b border-white/10"
+                        href="#"
+                        className="flex items-center text-white/60 hover:text-[#22c55e] inter-bold text-lg transition-colors pb-2 border-b border-white/10"
                     >
                         View All Posts <ArrowUpRight className="ml-2 w-5 h-5" />
                     </motion.a>
@@ -67,7 +67,7 @@ export default function Blogs() {
                             {/* Featured Image */}
                             <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] mb-6">
                                 <div className="absolute top-4 left-4 z-10">
-                                    <span className="bg-black/40 backdrop-blur-md border border-white/10 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                                    <span className="bg-black/40 backdrop-blur-md border border-white/10 text-white text-xs inter-bold px-4 py-2 rounded-full uppercase tracking-wider">
                                         {post.category}
                                     </span>
                                 </div>
@@ -79,30 +79,30 @@ export default function Blogs() {
                             </div>
 
                             {/* Post Meta */}
-                            <div className="flex items-center gap-4 text-gray-500 text-sm mb-4">
+                            <div className="flex items-center gap-4 text-gray-500 text-sm mb-4 inter-small">
                                 <span>{post.date}</span>
                                 <span className="w-1 h-1 bg-gray-700 rounded-full"></span>
                                 <span>{post.readTime}</span>
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-2xl font-bold leading-tight mb-4 group-hover:text-[#22c55e] transition-colors">
+                            <h3 className="text-2xl inter-bold leading-tight mb-4 group-hover:text-[#22c55e] transition-colors">
                                 {post.title}
                             </h3>
-                            
-                            <p className="text-gray-400 leading-relaxed mb-6 line-clamp-2">
+
+                            <p className="text-gray-400 inter-small leading-relaxed mb-6 line-clamp-2">
                                 {post.description}
                             </p>
 
                             {/* Read More Link */}
-                            <div className="flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all uppercase text-xs tracking-[0.2em]">
+                            <div className="flex items-center gap-2 text-white inter-bold group-hover:gap-4 transition-all uppercase text-xs tracking-[0.2em]">
                                 Read Article <ArrowRight className="w-4 h-4 text-[#22c55e]" />
                             </div>
                         </motion.article>
                     ))}
                 </div>
 
-               
+
             </div>
         </section>
     );

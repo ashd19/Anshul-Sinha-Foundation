@@ -1,12 +1,12 @@
-import React from 'react';
-import { MoveRight, Circle, MoveRightIcon } from "lucide-react";
+import { MoveRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import Card from "./Card";
+import Card from './Card'
+
 
 const stats = [
   {
     number: 1000,
-    heading: "Meals Distributed",
+    heading: "Meals Distribute d",
     text: "For families and individuals in need."
   },
   {
@@ -24,11 +24,9 @@ const stats = [
 function AboutUs() {
   return (
     <div id="About" className="bg-black text-white overflow-hidden">
-      {/* Upper Content Section */}
       <section className="min-h-[80vh] py-24 px-6 sm:px-12 md:px-20 lg:px-32 flex items-center">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center justify-between w-full max-w-7xl mx-auto">
 
-          {/* Left Side: Copy */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +42,7 @@ function AboutUs() {
             </div>
 
             <div className="space-y-6">
-              <p className="text-xl md:text-2xl text-gray-200 inter-md">
+              <p className="text-xl md:text-2 xl text-gray-200 inter-md">
                 Anshul Sinha Foundation is a nonprofit organization dedicated
                 to providing education, healthcare, and community empowerment.
               </p>
@@ -54,7 +52,7 @@ function AboutUs() {
               </p>
             </div>
 
-            <button className='flex rounded-full gap-3  bg-white text-black transition-colors ease-in duration-200   py-3 px-5 w-fit inter-md'>
+            <button className='flex rounded-full gap-3 hover:bg-[#22E56D] hover:cursor-pointer bg-white text-black transition-colors ease-in duration-200   py-3 px-5 w-fit inter-md'>
               Learn more
               <MoveRightIcon width={20} height={20} className='mt-0.5' />
             </button>

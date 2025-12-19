@@ -17,15 +17,7 @@ function App() {
       autoRaf: true,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    const frameId = requestAnimationFrame(raf);
-
     return () => {
-      cancelAnimationFrame(frameId);
       lenis.destroy();
     };
   }, []);
@@ -35,10 +27,10 @@ function App() {
       <Navbar />
       <Landing />
       <AboutUs />
-      <Causes/>
+      <Causes />
       <Blogs />
       <Projects />
-      <Faq/>
+      <Faq />
       {/* <Social /> */}
       <Footer />
     </div>

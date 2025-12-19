@@ -37,10 +37,10 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
         className="w-full py-8 flex justify-between items-center text-left group transition-all"
         onClick={onClick}
       >
-        <h3 className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${isOpen ? 'text-[#22c55e]' : 'text-white group-hover:text-gray-300'}`}>
+        <h3 className={`text-xl md:text-2xl inter-md transition-colors duration-300 ${isOpen ? 'text-[#22c55e]' : 'text-white group-hover:text-gray-300'}`}>
           {question}
         </h3>
-        <div className={`flex-shrink-0 ml-4 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#22c55e] border-[#22c55e] rotate-45' : 'bg-transparent'}`}>
+        <div className={`shrink-0 ml-4 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#22c55e] border-[#22c55e] rotate-45' : 'bg-transparent'}`}>
           <Plus className={`w-6 h-6 transition-colors ${isOpen ? 'text-black' : 'text-white'}`} />
         </div>
       </button>
@@ -54,7 +54,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
             className="overflow-hidden"
           >
-            <p className="text-gray-400 text-lg leading-relaxed pb-8 max-w-3xl">
+            <p className="text-gray-400 inter-small leading-relaxed pb-8 max-w-3xl">
               {answer}
             </p>
           </motion.div>
@@ -71,20 +71,20 @@ export default function Faq() {
     <section id="FAQ" className="bg-black text-white py-24 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          
+
           {/* Left Column: Static Content */}
           <div className="lg:w-1/3 flex flex-col">
             <div className="flex items-center mb-6">
               <CircleStop className="w-4 h-4 text-[#22c55e] animate-pulse" />
-              <span className="ml-3 text-xs font-bold tracking-[0.3em] uppercase text-gray-400">
+              <span className="ml-3 text-xs inter-bold tracking-[0.3em] uppercase text-gray-400">
                 Common Queries
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8">
+            <h2 className="text-5xl md:text-6xl inter-bold tracking-tighter leading-tight mb-8">
               Your questions, <br />
               <span className="text-gray-500">our answers</span>
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 inter-md leading-relaxed">
               Can't find what you're looking for? Reach out to our support team for more detailed information about our operations.
             </p>
           </div>

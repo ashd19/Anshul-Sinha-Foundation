@@ -15,25 +15,20 @@ export default function Footer() {
     <footer className="bg-black text-white w-full pt-24 overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-24">
-          
-          {/* Brand Column */}
+
           <div className="max-w-md">
-            <div className="flex items-center gap-2 mb-6">
-               <Circle className="w-2 h-2 fill-[#22c55e] text-[#22c55e]" />
-               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500">Impact for Good</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none mb-6">
+
+            <h2 className="text-4xl md:text-6xl inter-bold tracking-tighter leading-none mb-6">
               Anshul Sinha <br /> Foundation
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-sm">
+            <p className="text-gray-400 inter-md leading-relaxed max-w-sm">
               Be the first to hear how you're making a difference. Small actions lead to massive change.
             </p>
           </div>
 
-          {/* Newsletter Column */}
-          <div className="w-full max-w-md bg-white/5 p-8 rounded-[2rem] border border-white/10">
-            <h3 className="text-xl font-bold mb-2">Newsletter</h3>
-            <p className="text-gray-500 text-sm mb-6">Never miss an update on our latest projects.</p>
+          <div className="">
+            <h3 className="text-xl inter-bold mb-2">Newsletter</h3>
+            <p className="text-gray-500 inter-small mb-6">Never miss an update on our latest projects.</p>
 
             <div className="relative">
               <input
@@ -59,13 +54,13 @@ export default function Footer() {
             { title: "Social", items: links.social }
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="text-gray-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-8">
+              <h4 className="text-gray-600 inter-bold uppercase tracking-[0.2em] text-[10px] mb-8">
                 {col.title}
               </h4>
               <ul className="space-y-4">
                 {col.items.map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors text-sm font-medium">
+                    <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors inter-small">
                       {item}
                     </a>
                   </li>
@@ -74,11 +69,10 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Contact Details */}
           <div>
-            <h4 className="text-gray-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-8">Contact</h4>
-            <div className="space-y-4 text-sm text-gray-400">
-              <p className="text-white font-bold">+91 7021655417</p>
+            <h4 className="text-gray-600 inter-bold uppercase tracking-[0.2em] text-[10px] mb-8">Contact</h4>
+            <div className="space-y-4 inter-small text-gray-400">
+              <p className="text-white inter-bold">+91 7021655417</p>
               <a href="mailto:info@anshulsinhafoundation.com" className="hover:text-[#22c55e] block truncate">
                 info@anshulsinhafoundation.com
               </a>
@@ -87,8 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/5 py-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 uppercase tracking-[0.2em] gap-4">
+        <div className=" py-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 uppercase tracking-[0.2em] gap-4">
           <p>© 2024 ANSHUL SINHA FOUNDATION</p>
           <a href="https://nexacrft.com" target="_blank" className="hover:text-white transition-colors">
             DESIGNED BY NEXACRFT
@@ -96,7 +89,7 @@ export default function Footer() {
         </div>
       </div>
 
-     
+
     </footer>
   );
 }
