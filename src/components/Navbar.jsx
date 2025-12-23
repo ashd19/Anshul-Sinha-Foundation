@@ -37,7 +37,7 @@ export default function Navbar() {
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMenuOpen ? <X color="white" fill="white"  size={20} /> : <Menu color="white" fill="white" size={20} />}
             </button>
           </div>
         </nav>

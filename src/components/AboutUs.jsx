@@ -6,7 +6,7 @@ import Card from './Card'
 const stats = [
   {
     number: 1000,
-    heading: "Meals Distribute d",
+    heading: "Meals Distributed",
     text: "For families and individuals in need."
   },
   {
