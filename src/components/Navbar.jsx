@@ -12,15 +12,20 @@ export default function Navbar() {
           <a href="#" className="text-sm md:text-base inter-bold whitespace-nowrap overflow-hidden text-ellipsis max-w-[150px]  text-white sm:max-w-none ">
             Anshul Sinha Foundation
           </a>
-          <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
-            {["Home", "Blog", "Book Online"].map((item, index) => (
-              <a href={`#${item}`} key={index} className="inter-small text-white text-sm hover:text-[#22E56D] transition-colors">
-                {item}
+          <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 inter-small text-sm">
+            {[
+              { name: "Home", id: "Home" },
+              { name: "About", id: "About" },
+              { name: "Blog", id: "Blog" },
+              { name: "Projects", id: "Projects" },
+            ].map((item, index) => (
+              <a href={`#${item.id}`} key={index} className="text-white hover:text-[#22E56D] transition-colors">
+                {item.name}
               </a>
             ))}
             <a
-              href="#"
-              className="rounded-3xl bg-[#22E56D] px-5 py-2 inter-bold text-white text-sm hover:bg-black hover:text-white transition-all duration-300 shadow-md"
+              href="#Donate"
+              className="rounded-3xl bg-[#22E56D] px-5 py-2 inter-bold text-white hover:bg-black hover:text-white transition-all duration-300 shadow-md"
             >
               Donate Now
             </a>
@@ -53,18 +58,23 @@ export default function Navbar() {
             }`}
         >
           <div className="flex flex-col p-6 space-y-6">
-            {["Home", "Blog", "Book Online"].map((item, index) => (
+            {[
+              { name: "Home", id: "Home" },
+              { name: "About", id: "About" },
+              { name: "Blog", id: "Blog" },
+              { name: "Projects", id: "Projects" },
+            ].map((item, index) => (
               <a
-                href={`/${item}` && item === "Home" ? "/" : `#${item}`}
+                href={`#${item.id}`}
                 key={index}
                 className="inter-small text-lg hover:text-[#22E56D] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item}
+                {item.name}
               </a>
             ))}
             <a
-              href="/donate"
+              href="#Donate"
               className="rounded-3xl bg-[#22E56D] w-full py-3 text-center inter-bold text-white hover:text-green-600 hover:bg-black transition-colors duration-400 ease-in"
               onClick={() => setIsMenuOpen(false)}
             >
