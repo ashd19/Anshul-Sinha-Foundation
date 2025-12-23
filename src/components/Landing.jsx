@@ -4,6 +4,7 @@ export default function Landing() {
   return (
     <>
       <main
+      id="Home"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://media.istockphoto.com/id/2206130846/photo/group-of-happy-kids-sigiriya-ceylon.jpg?s=612x612&w=0&k=20&c=Q51hjILKWdH_5kk6i7oODfRosuCjdUdFwVm2EJSPQl8=')",

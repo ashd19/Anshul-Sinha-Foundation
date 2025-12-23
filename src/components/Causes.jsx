@@ -27,7 +27,7 @@ const causes = [
 
 const Causes = () => {
   return (
-    <section className="bg-black text-white py-20 px-6 md:px-12">
+    <section id="Donate" className="bg-black text-white py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Top Header Area */}

@@ -58,13 +58,16 @@ export default function Footer() {
                 {col.title}
               </h4>
               <ul className="space-y-4">
-                {col.items.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors inter-small">
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                {col.items.map((item) => {
+                  const href = col.title === "Navigation" ? `#${item}` : "#";
+                  return (
+                    <li key={item}>
+                      <a href={href} className="text-gray-400 hover:text-[#22c55e] transition-colors inter-small capitalize">
+                        {item}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

@@ -14,7 +14,7 @@ export default function Navbar() {
           </a>
           <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
             {["Home", "Blog", "Book Online"].map((item, index) => (
-              <a href={`${item}`} key={index} className="inter-small text-white text-sm hover:text-[#22E56D] transition-colors">
+              <a href={`#${item}`} key={index} className="inter-small text-white text-sm hover:text-[#22E56D] transition-colors">
                 {item}
               </a>
             ))}
@@ -37,7 +37,7 @@ export default function Navbar() {
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X color="white" fill="white"  size={20} /> : <Menu color="white" fill="white" size={20} />}
+              {isMenuOpen ? <X color="white" fill="white" size={20} /> : <Menu color="white" fill="white" size={20} />}
             </button>
           </div>
         </nav>
